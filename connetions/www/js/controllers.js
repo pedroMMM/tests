@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $ionicDeploy) {
+.controller('DashCtrl', function($scope, $ionicDeploy, $http) {
   // Update app code with new release from Ionic Deploy
   $scope.doUpdate = function() {
     $ionicDeploy.update().then(function(res) {
@@ -20,6 +20,17 @@ angular.module('starter.controllers', [])
       $scope.hasUpdate = hasUpdate;
     }, function(err) {
       console.error('Ionic Deploy: Unable to check for updates', err);
+    });
+  }
+
+  $scope.in = {};
+
+  $scope.newHeli = function () {
+    $http.post('http://192.168.1.2:59077/api/helis', $scope.in).
+    then(function(data) {
+      $scope.heli=data.data;
+    }, function(response) {
+      alert(response.status);
     });
   }
 })

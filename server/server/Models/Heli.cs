@@ -12,10 +12,10 @@ namespace server.Models
             _guid = Guid.NewGuid();
         }
 
-        public string Id
+        public string id
         {
             get { return _guid.ToString(); }
-            set
+            private set
             {
                 Guid guid;
                 if (Guid.TryParse(value, out guid))
@@ -26,5 +26,7 @@ namespace server.Models
         }
 
         public Geolocation geolocation { get; set; }
+
+        public string name { get; set; }
     }
 }
