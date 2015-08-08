@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace server.Controllers
 {
@@ -25,9 +26,14 @@ namespace server.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        [ResponseType(typeof(string))]
+        public IHttpActionResult Post([FromBody]string value)
         {
-            Console.WriteLine(value);
+            if(value == null)
+            {
+                return BadRequest("it's null");
+            }
+            return Ok(value);
         }
 
         // PUT api/values/5
