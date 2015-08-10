@@ -9,7 +9,7 @@ Controller for the discover page
     Recommendations.getNextSongs().then(function () {
         $scope.currentSong = Recommendations.queue[0];
     });
-    
+
     $scope.sendFeedback = function (bool) {
 
         if (bool) {
@@ -27,6 +27,15 @@ Controller for the discover page
 
         }, 250);
     };
+
+    $scope.nextAlbumImg = function () {
+        if (Recommendations.queue.length > 1) {
+            return Recommendations.queue[1].image_large;
+        }
+
+        return '';
+    };
+
 })
 
 
