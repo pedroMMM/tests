@@ -42,5 +42,9 @@ angular.module('controllers').controller('MainCtrl',
             $scope.title = '';
         };
 
+        $scope.incrementUpvotes = function (post) {
+            post.upvotes += 1;
+        };
+
     }
 );
