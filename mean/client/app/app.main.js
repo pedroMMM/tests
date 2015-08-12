@@ -1,5 +1,8 @@
-'use strict';
+(function () {
+    'use strict';
 
-var controllers = angular.module('controllers', []);
+    var controllers = angular.module('controllers', []);
 
-angular.module('flapperNews', ['controllers']);
+    angular.module('flapperNews', ['controllers']);
+
+})();

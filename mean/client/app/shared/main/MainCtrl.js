@@ -1,12 +1,18 @@
-'user strict';
+(function () {
+    'user strict';
 
-angular.module('controllers').controller('MainCtrl',
+    angular.module('controllers').controller('MainCtrl', MainCtrl);
 
-    function ($scope) {
+    function MainCtrl() {
 
-        $scope.test = 'Hello world!';
+        var vm = this;
 
-        $scope.posts = [
+        vm.test = 'Hello world!';
+
+        vm.addPost = addPost;
+        vm.incrementUpvotes = incrementUpvotes;
+
+        vm.posts = [
             {
                 title: 'post 1',
                 upvotes: 5
@@ -29,22 +35,23 @@ angular.module('controllers').controller('MainCtrl',
             }
         ];
 
-        $scope.addPost = function () {
+        function addPost() {
 
-            if (!$scope.title || $scope.title === '') {
+            if (!vm.title || vm.title === '') {
                 return;
             }
 
-            $scope.posts.push({
-                title: $scope.title,
+            vm.posts.push({
+                title: vm.title,
                 upvotes: 0
             });
-            $scope.title = '';
-        };
+            vm.title = '';
+        }
 
-        $scope.incrementUpvotes = function (post) {
+        function incrementUpvotes(post) {
             post.upvotes += 1;
-        };
+        }
 
     }
-);
+
+})();
