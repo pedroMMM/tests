@@ -1,9 +1,9 @@
 (function () {
     'user strict';
 
-    angular.module('controllers').controller('MainCtrl', MainCtrl);
+    angular.module('flapperNews.main').controller('MainController', MainController);
 
-    function MainCtrl() {
+    function MainController() {
 
         var vm = this;
 
