@@ -7,8 +7,6 @@
 
         var vm = this;
 
-        vm.test = 'Hello world!';
-
         vm.addPost = addPost;
         vm.incrementUpvotes = incrementUpvotes;
 

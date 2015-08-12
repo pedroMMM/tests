@@ -1,7 +1,10 @@
 <html>
 
 <head>
-    <title>My Angular App!</title>
+    <title>Flapper News</title>
+
+    <!--    Bootstrap import-->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!--    AngularJS main import-->
     <script src="bower_components/angular/angular.min.js"></script>
@@ -13,39 +16,49 @@
     <script src="app/main/main.module.js"></script>
     <script src="app/main/mainController.js"></script>
 
+    <style>
+        .glyphicon-thumbs-up {
+            cursor: pointer
+        }
+    </style>
+
 </head>
 
 <body ng-app="flapperNews" ng-controller="MainController as vm">
 
-    <div>
-        {{vm.test}}
-    </div>
+    <div class="col-md-6 col-md-offset-3">
 
-    <div ng-repeat="post in vm.posts | orderBy: '-upvotes'">
+        <div class="page-header">
+            <h1>Flapper News</h1>
+        </div>
 
-        <span ng-click="vm.incrementUpvotes(post)">^</span>
+        <div ng-repeat="post in vm.posts | orderBy: '-upvotes'">
+            <span class="glyphicon glyphicon-thumbs-up" ng-click="vm.incrementUpvotes(post)"></span> {{post.upvotes}}
 
-        <a ng-show="post.link" href="{{post.link}}">
-            {{post.title}}
-        </a>
+            <span style="font-size:20px; margin-left:10px;">
+                <a ng-show="post.link" href="{{post.link}}">
+                    {{post.title}}
+                </a>
 
-        <span ng-hide="post.link">
-            {{post.title}}
-        </span>
+                <span ng-hide="post.link">
+                    {{post.title}}
+                </span>
+            </span>
+        </div>
 
-        <span>
-            - upvotes: {{post.upvotes}}
-        </span>
-    </div>
+        <div>
+            <form ng-submit="vm.addPost()" style="margin-top:30px;">
+                <h3>Add a new post</h3>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Title" ng-model="vm.title">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Link" ng-model="vm.link">
+                </div>
+                <button type="submit" class="btn btn-primary">Post</button>
+            </form>
+        </div>
 
-    <div>
-        <form ng-submit="vm.addPost()">
-            <input type="text" placeholder="Title" ng-model="vm.title">
-            <br>
-            <input type="text" placeholder="Link" ng-model="vm.link">
-            <br>
-            <button type="submit">Post</button>
-        </form>
     </div>
 
 </body>
