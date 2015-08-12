@@ -43,9 +43,11 @@
 
             vm.posts.push({
                 title: vm.title,
+                link: vm.link,
                 upvotes: 0
             });
             vm.title = '';
+            vm.link = '';
         }
 
         function incrementUpvotes(post) {
