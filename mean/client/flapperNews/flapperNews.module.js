@@ -1,6 +1,6 @@
 (function () {
     'use strict';
 
-    angular.module('flapperNews', ['flapperNews.core', 'flapperNews.main', 'blocks.router']);
+    angular.module('flapperNews', ['flapperNews.core', 'flapperNews.main', 'flapperNews.posts', 'blocks.router']);
 
 })();

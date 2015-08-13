@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('flapperNews.core').factory('PostService', PostService);
+    angular.module('flapperNews.posts').factory('PostService', PostService);
 
     function PostService() {
 
