@@ -1,4 +1,5 @@
 (function () {
+    'use strict';
 
     angular.module('blocks.router').provider('Routes', RoutesProvider);
 
@@ -21,6 +22,22 @@
                 getStates: getStates
             };
 
+            return service;
+
+            function getStates() {
+                return $state.get();
+            }
+
+            function configureStates(states, otherwisePath) {
+                states.forEach(function (state) {
+                    $stateProvider.state(state.state, state.config);
+                });
+
+                if (otherwisePath && !hasOtherwise) {
+                    hasOtherwise = true;
+                    $urlRouterProvider.otherwise(otherwisePath);
+                }
+            }
         }
     }
 
