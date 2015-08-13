@@ -1,11 +1,67 @@
-<!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+    <title>Flapper News</title>
+
+    <!--    Bootstrap import-->
+    <link href="/javascripts/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AngularJS main import-->
+    <script src="/javascripts/bower_components/angular/angular.min.js"></script>
+
+    <!--    ui-router module import-->
+    <script src="/javascripts/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!--    My main AngularJS module-->
+    <script src="/javascripts/flapperNews/flapperNews.module.js"></script>
+
+    <!--    Core modules-->
+    <script src="/javascripts/flapperNews/core/core.module.js"></script>
+
+    <script src="/javascripts/flapperNews/core/core.constants.js"></script>
+    <script src="/javascripts/flapperNews/core/core.routes.js"></script>
+
+    <!--    Blocks.Router modules-->
+    <script src="/javascripts/flapperNews/blocks/router/router.module.js"></script>
+    <script src="/javascripts/flapperNews/blocks/router/routes.provider.js"></script>
+
+    <!--    Blocks.Upvoter modules-->
+    <script src="/javascripts/flapperNews/blocks/upvoter/upvoter.module.js"></script>
+    <script src="/javascripts/flapperNews/blocks/upvoter/upvoter.service.js"></script>
+
+    <!--    Main modules-->
+    <script src="/javascripts/flapperNews/main/main.module.js"></script>
+
+    <script src="/javascripts/flapperNews/main/main.constants.js"></script>
+    <script src="/javascripts/flapperNews/main/main.controller.js"></script>
+    <script src="/javascripts/flapperNews/main/main.routes.js"></script>
+
+    <!--    Posts modules-->
+    <script src="/javascripts/flapperNews/posts/posts.module.js"></script>
+
+    <script src="/javascripts/flapperNews/posts/posts.constants.js"></script>
+    <script src="/javascripts/flapperNews/posts/posts.controller.js"></script>
+    <script src="/javascripts/flapperNews/posts/posts.routes.js"></script>
+    <script src="/javascripts/flapperNews/posts/posts.service.js"></script>
+
+    <style>
+        .glyphicon-thumbs-up {
+            cursor: pointer
+        }
+    </style>
+
+</head>
+
+<body ng-app="flapperNews">
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+            <ui-view></ui-view>
+
+        </div>
+    </div>
+
+</body>
+
 </html>
