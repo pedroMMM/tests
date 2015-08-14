@@ -13,7 +13,6 @@ module.exports = router;
 //////////////////////
 
 function getPosts(req, res, next) {
-    //    Post.find(helper(err, obj));
     Post.find(function (err, obj) {
         if (err) {
             return next(err);
@@ -30,11 +29,4 @@ function postPost(req, res, next) {
         }
         res.json(obj);
     });
-}
-
-function helper(err, obj) {
-    if (err) {
-        return next(err);
-    }
-    res.json(obj);
 }
