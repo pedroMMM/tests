@@ -13,4 +13,11 @@ var PostSchema = new mongoose.Schema({
     }]
 });
 
+PostSchema.methods.upvote = upvote;
+
 mongoose.model('Post', PostSchema);
+
+function upvote(cb) {
+    this.upvotes += 1;
+    this.save(cb);
+}
