@@ -15,27 +15,30 @@
         "id": "brackets-angularjs-codehints"
     },
     {
+        "id": "acb-bootstrap-snippets"
+    },
+    {
         "id": "brackets-indent-guides"
     },
     {
-        "id": "brackets-beautify"
-    },
-    {
-        "id": "brackets-display-shortcuts"
+        "id": "genuitec.team-extensions"
     },
     {
         "id": "ivogabe.icons"
     },
     {
-        "id": "hirse.ungit"
+        "id": "brackets-beautify"
     },
     {
         "id": "zaggino.brackets-git"
     },
     {
-        "id": "adobe.brackets.extract"
+        "id": "hirse.ungit"
     },
     {
-        "id": "genuitec.team-extensions"
+        "id": "brackets-display-shortcuts"
+    },
+    {
+        "id": "adobe.brackets.extract"
     }
 ]
