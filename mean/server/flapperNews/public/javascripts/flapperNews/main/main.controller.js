@@ -13,9 +13,7 @@
         vm.incrementUpvotes = incrementUpvotes;
         vm.posts = [];
 
-        PostService.query({
-            postID: 'gdfg'
-        }).$promise.then(function (data) {
+        PostService.query().$promise.then(function (data) {
             angular.copy(data, vm.posts);
         }, function (error) {
             alert(error);
