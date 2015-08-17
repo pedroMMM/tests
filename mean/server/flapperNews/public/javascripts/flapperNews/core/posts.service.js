@@ -7,7 +7,17 @@
 
     function PostService($resource) {
 
-        var service = $resource('/api/posts/:postID', null, {});
+        var service = $resource('/api/posts/:postID', null, {
+
+            update: {
+                method: 'PUT'
+            },
+            upvote: {
+                method: 'PUT',
+                url: '/api/posts/:postID/upvote'
+            }
+
+        });
 
         return service;
     }
