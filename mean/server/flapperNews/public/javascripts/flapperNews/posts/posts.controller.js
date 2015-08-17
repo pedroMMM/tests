@@ -7,7 +7,9 @@
 
         var vm = this;
 
-        vm.post = PostService.posts[$stateParams.id];
+        vm.post = PostService.get({
+            postID: $stateParams.id
+        });
         vm.addComment = addComment;
         vm.incrementUpvotes = incrementUpvotes;
 
