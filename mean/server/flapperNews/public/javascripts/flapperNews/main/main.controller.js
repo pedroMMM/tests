@@ -24,7 +24,15 @@
         //                });
 
         function incrementUpvotes(post) {
-            Upvoter.upvote(post);
+            console.info(post._id);
+
+            PostService.upvote({
+                postID: post._id
+            }, {}).$promise.then(function (data) {
+                angular.copy(data, post);
+            }, function (error) {
+                alert(error);
+            });
         }
 
         function addPost() {
