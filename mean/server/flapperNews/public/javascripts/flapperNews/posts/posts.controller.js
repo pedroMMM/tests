@@ -7,9 +7,16 @@
 
         var vm = this;
 
-        vm.post = PostService.get({
+        vm.post = {};
+
+        PostService.get({
             postID: $stateParams.id
+        }).$promise.then(function (data) {
+            angular.copy(data, vm.post);
+        }, function (error) {
+            alert(error);
         });
+
         vm.addComment = addComment;
         vm.incrementUpvotes = incrementUpvotes;
 

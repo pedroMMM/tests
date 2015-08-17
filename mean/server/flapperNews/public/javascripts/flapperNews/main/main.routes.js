@@ -15,10 +15,17 @@
                     url: MAIN.URL,
                     templateUrl: MAIN.TEMPLATE,
                     controller: MAIN.CONTROLLER,
-                    controllerAs: 'vm'
+                    controllerAs: 'vm',
+                    resolve: {
+                        postPromise: postPromise
+                    }
                 }
             }
             ];
+    }
+
+    function postPromise() {
+
     }
 
 })();
