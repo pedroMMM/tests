@@ -3,19 +3,21 @@
 
     angular.module('flapperNews.posts').controller('PostsController', PostController);
 
-    function PostController($stateParams, PostService, Upvoter) {
+    function PostController($stateParams, PostService, Upvoter, post) {
 
         var vm = this;
 
         vm.post = {};
 
-        PostService.get({
-            postID: $stateParams.id
-        }).$promise.then(function (data) {
-            angular.copy(data, vm.post);
-        }, function (error) {
-            alert(error);
-        });
+        angular.copy(post, vm.post);
+
+//        PostService.get({
+             //            postID: $stateParams.id
+             //        }).$promise.then(function (data) {
+             //            angular.copy(data, vm.post);
+             //        }, function (error) {
+             //            alert(error);
+             //        });
 
         vm.addComment = addComment;
         vm.incrementUpvotes = incrementUpvotes;

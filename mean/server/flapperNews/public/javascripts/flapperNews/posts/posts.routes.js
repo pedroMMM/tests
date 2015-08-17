@@ -15,10 +15,21 @@
                     url: POSTS.URL,
                     templateUrl: POSTS.TEMPLATE,
                     controller: POSTS.CONTROLLER,
-                    controllerAs: 'vm'
+                    controllerAs: 'vm',
+                    resolve: postPromise
                 }
             }
         ];
+    }
+
+    var postPromise = {
+        PostService: 'PostService',
+
+        post: function (PostService, $stateParams) {
+            return PostService.get({
+                postID: $stateParams.id
+            }).$promise;
+        }
     }
 
 })();
