@@ -16,16 +16,18 @@
                     templateUrl: MAIN.TEMPLATE,
                     controller: MAIN.CONTROLLER,
                     controllerAs: 'vm',
-                    resolve: {
-                        postPromise: postPromise
-                    }
+                    resolve: postsPromise
                 }
             }
-            ];
+        ];
     }
 
-    function postPromise() {
+    var postsPromise = {
+        PostService: 'PostService',
 
-    }
+        posts: function (PostService) {
+            return PostService.query().$promise;
+        }
+    };
 
 })();
