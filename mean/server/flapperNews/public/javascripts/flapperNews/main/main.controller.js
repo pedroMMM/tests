@@ -17,11 +17,11 @@
         angular.copy(posts, vm.posts);
 
 
-        //                PostService.query().$promise.then(function (data) {
-        //            angular.copy(data, vm.posts);
-        //        }, function (error) {
-        //            alert(error);
-        //        });
+        //                        PostService.query().$promise.then(function (data) {
+        //                    angular.copy(data, vm.posts);
+        //                }, function (error) {
+        //                    alert(error);
+        //                });
 
         function incrementUpvotes(post) {
             Upvoter.upvote(post);
@@ -33,27 +33,20 @@
                 return;
             }
 
-            vm.posts.push({
+            var newPost = {
                 title: vm.title,
                 link: vm.link,
-                upvotes: 0,
-                comments: [
-                    {
-                        author: 'Joe',
-                        body: 'Cool post!',
-                        upvotes: 0
-                    },
-                    {
-                        author: 'Bob',
-                        body: 'Great idea but everything is wrong!',
-                        upvotes: 0
-                    }
-                ]
+            };
+
+            PostService.save(newPost).$promise.then(function (data) {
+                vm.posts.push(data);
+
+                vm.title = '';
+                vm.link = '';
+
+            }, function (error) {
+                alert(error);
             });
-            vm.title = '';
-            vm.link = '';
         }
-
     }
-
 })();
