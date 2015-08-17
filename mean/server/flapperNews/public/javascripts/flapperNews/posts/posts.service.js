@@ -7,7 +7,7 @@
 
     function PostService($resource) {
 
-        var service = $resource('/posts/:postID', null, {});
+        var service = $resource('/api/posts/:postID', null, {});
 
         return service;
     }

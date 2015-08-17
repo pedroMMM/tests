@@ -1,11 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var posts = require('./posts');
 
-/* GET home page. */
-router.get('/', index);
+router.use('/api', require('./api'));
 
-router.use('/posts', posts);
+router.get('/**', index);
 
 module.exports = router;
 
