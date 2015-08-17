@@ -4,7 +4,7 @@
     angular.module('flapperNews.main').run(appRun);
 
     function appRun(Routes, MAIN) {
-        Routes.configureStates(getStates(MAIN));
+        Routes.configureStates(getStates(MAIN), MAIN.URL);
     }
 
     function getStates(MAIN) {

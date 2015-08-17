@@ -3,8 +3,8 @@
 
     angular.module('flapperNews.posts')
         .constant('POSTS', {
-            STATE: 'posts',
-            URL: '/posts/{id}',
+            STATE: 'post',
+            URL: '/post/{id}',
             TEMPLATE: '/javascripts/flapperNews/posts/posts.html',
             CONTROLLER: 'PostsController'
         });
