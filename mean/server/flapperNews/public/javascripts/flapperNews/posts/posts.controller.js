@@ -23,7 +23,7 @@
         vm.incrementUpvotes = incrementUpvotes;
 
         function incrementUpvotes(comment) {
-            Upvoter.upvote(comment);
+            //Upvoter.upvote(comment);
         }
 
         function addComment() {

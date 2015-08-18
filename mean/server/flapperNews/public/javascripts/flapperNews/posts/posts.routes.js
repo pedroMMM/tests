@@ -30,6 +30,6 @@
                 postID: $stateParams.id
             }).$promise;
         }
-    }
+    };
 
 })();
