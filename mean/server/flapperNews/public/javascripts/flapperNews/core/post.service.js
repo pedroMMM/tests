@@ -3,7 +3,7 @@
 
     angular.module('flapperNews.core').factory('PostService', PostService);
 
-    PostService.inject = ['$resource'];
+    PostService.$inject = ['$resource'];
 
     function PostService($resource) {
 

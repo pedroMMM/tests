@@ -3,8 +3,6 @@
 
     angular.module('flapperNews.main').controller('MainController', MainController);
 
-
-
     function MainController(PostService, Upvoter, posts) {
 
         var vm = this;

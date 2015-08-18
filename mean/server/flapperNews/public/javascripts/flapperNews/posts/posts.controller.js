@@ -3,7 +3,7 @@
 
     angular.module('flapperNews.posts').controller('PostsController', PostController);
 
-    function PostController($stateParams, PostService, Upvoter, post) {
+    function PostController(PostService, $stateParams, CommentService, post) {
 
         var vm = this;
 
@@ -11,13 +11,13 @@
 
         angular.copy(post, vm.post);
 
-//        PostService.get({
-             //            postID: $stateParams.id
-             //        }).$promise.then(function (data) {
-             //            angular.copy(data, vm.post);
-             //        }, function (error) {
-             //            alert(error);
-             //        });
+        //        PostService.get({
+        //            postID: $stateParams.id
+        //        }).$promise.then(function (data) {
+        //            angular.copy(data, vm.post);
+        //        }, function (error) {
+        //            alert(error);
+        //        });
 
         vm.addComment = addComment;
         vm.incrementUpvotes = incrementUpvotes;
@@ -30,13 +30,21 @@
             if (vm.body === '') {
                 return;
             }
-            vm.post.comments.push({
+
+            var newComment = {
                 body: vm.body,
                 author: 'user',
                 upvotes: 0
-            });
+            };
 
-            vm.body = '';
+            CommentService.save({
+                postID: post._id
+            }, newComment).$promise.then(function (data) {
+                vm.post.comments.push(data);
+                vm.body = '';
+            }, function (error) {
+                alert(error);
+            });
         }
 
     }
