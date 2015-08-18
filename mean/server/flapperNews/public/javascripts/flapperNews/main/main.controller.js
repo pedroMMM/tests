@@ -14,16 +14,7 @@
 
         angular.copy(posts, vm.posts);
 
-
-        //                        PostService.query().$promise.then(function (data) {
-        //                    angular.copy(data, vm.posts);
-        //                }, function (error) {
-        //                    alert(error);
-        //                });
-
         function incrementUpvotes(post) {
-            console.info(post._id);
-
             PostService.upvote({
                 postID: post._id
             }, {}).$promise.then(function (data) {

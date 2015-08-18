@@ -11,19 +11,18 @@
 
         angular.copy(post, vm.post);
 
-        //        PostService.get({
-        //            postID: $stateParams.id
-        //        }).$promise.then(function (data) {
-        //            angular.copy(data, vm.post);
-        //        }, function (error) {
-        //            alert(error);
-        //        });
-
         vm.addComment = addComment;
         vm.incrementUpvotes = incrementUpvotes;
 
         function incrementUpvotes(comment) {
-            //Upvoter.upvote(comment);
+            CommentService.upvote({
+                postID: post._id,
+                commentID: comment._id
+            }, {}).$promise.then(function (data) {
+                angular.copy(data, comment);
+            }, function (error) {
+                alert(error);
+            });
         }
 
         function addComment() {
