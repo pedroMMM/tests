@@ -12,28 +12,28 @@
         "id": "angularui.angularjs"
     },
     {
-        "id": "acb-bootstrap-snippets"
-    },
-    {
-        "id": "brackets-angularjs-codehints"
-    },
-    {
         "id": "brackets-indent-guides"
     },
     {
         "id": "chrisgriffith.ionicbracketshints"
     },
     {
+        "id": "acb-bootstrap-snippets"
+    },
+    {
+        "id": "brackets-angularjs-codehints"
+    },
+    {
         "id": "genuitec.team-extensions"
     },
     {
-        "id": "brackets-display-shortcuts"
+        "id": "ivogabe.icons"
     },
     {
         "id": "brackets-beautify"
     },
     {
-        "id": "ivogabe.icons"
+        "id": "brackets-display-shortcuts"
     },
     {
         "id": "hirse.ungit"
@@ -43,5 +43,8 @@
     },
     {
         "id": "adobe.brackets.extract"
+    },
+    {
+        "id": "jonwolfe.file-tree-exclude"
     }
 ]
